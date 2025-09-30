@@ -3,7 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Éditions Bosembo - Maison d'édition</title>
+    <title>Éditions Bosembo - Maison d'édition à Kinshasa, RDC</title>
+    <meta name="description" content="Éditions Bosembo - Maison d'édition basée à Kinshasa, RDC. Découvrez nos e-books gratuits sur le leadership, le développement personnel et l'entrepreneuriat.">
+    <meta name="keywords" content="Éditions Bosembo, Kinshasa, RDC, maison d'édition, e-books gratuits, leadership, développement personnel, entrepreneuriat, République Démocratique du Congo">
+    <meta name="author" content="Éditions Bosembo">
+    
+    <!-- Open Graph / Réseaux sociaux -->
+    <meta property="og:title" content="Éditions Bosembo - Maison d'édition à Kinshasa, RDC">
+    <meta property="og:description" content="Découvrez nos e-books gratuits sur le leadership, le développement personnel et l'entrepreneuriat.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://editionsbosembo.com">
+    <meta property="og:image" content="favicon.jpg">
+    
+    <!-- Schema.org markup pour Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Éditions Bosembo",
+      "url": "https://editionsbosembo.com",
+      "logo": "favicon.jpg",
+      "description": "Maison d'édition basée à Kinshasa, RDC, spécialisée dans les livres sur le leadership, le développement personnel et l'entrepreneuriat.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kinshasa",
+        "addressCountry": "RDC"
+      },
+      "sameAs": [
+        "https://www.instagram.com/editionsbosembo"
+      ]
+    }
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -23,58 +54,58 @@
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
         
         /* === PAGE DE CHARGEMENT === */
-.loading-page {
-  position: fixed;
-  inset: 0; /* top:0; right:0; bottom:0; left:0 */
-  background: #fff; /* fond blanc */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
+        .loading-page {
+          position: fixed;
+          inset: 0; /* top:0; right:0; bottom:0; left:0 */
+          background: #fff; /* fond blanc */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        }
 
-/* Conteneur du logo et animation */
-.loader-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        /* Conteneur du logo et animation */
+        .loader-content {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-/* Logo */
-.logo {
-  width: 120px; /* taille du logo */
-  margin-bottom: 20px;
-}
+        /* Logo */
+        .logo {
+          width: 120px; /* taille du logo */
+          margin-bottom: 20px;
+        }
 
-/* Animation écriture (stylo qui trace une ligne) */
-.writing-animation {
-  position: relative;
-  width: 100px;  /* longueur de la ligne */
-  height: 4px;   /* épaisseur de la ligne */
-  background: #e0e0e0;
-  overflow: hidden;
-  border-radius: 2px;
-}
+        /* Animation écriture (stylo qui trace une ligne) */
+        .writing-animation {
+          position: relative;
+          width: 100px;  /* longueur de la ligne */
+          height: 4px;   /* épaisseur de la ligne */
+          background: #e0e0e0;
+          overflow: hidden;
+          border-radius: 2px;
+        }
 
-.writing-animation span {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: #000; /* couleur du trait (stylo) */
-  animation: writing 2s linear forwards;
-}
+        .writing-animation span {
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: #000; /* couleur du trait (stylo) */
+          animation: writing 2s linear forwards;
+        }
 
-@keyframes writing {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-        
+        @keyframes writing {
+          0% {
+            left: -100%;
+          }
+          100% {
+            left: 0%;
+          }
+        }
+                
         body {
             font-family: 'Poppins', sans-serif;
             scroll-behavior: smooth;
@@ -216,19 +247,20 @@
 <body class="bg-white text-gray-800">
     
     <!-- Loading Page -->
-<div class="loading-page">
-  <div class="loader-content">
-    <img src="favicon.jpg" alt="Logo" class="logo" />
-    <div class="writing-animation">
-      <span></span>
+    <div class="loading-page">
+      <div class="loader-content">
+        <img src="favicon.jpg" alt="Logo Éditions Bosembo Kinshasa RDC" class="logo" />
+        <div class="writing-animation">
+          <span></span>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+    
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <img src="favicon.jpg" alt="Logo Torche" class="logo-torche mr-2 h-10 w-auto">
+                <img src="favicon.jpg" alt="Logo Éditions Bosembo Kinshasa RDC" class="logo-torche mr-2 h-10 w-auto">
                 <span class="text-xl font-bold text-bosembo-blue">Éditions Bosembo</span>
             </div>
             
@@ -262,7 +294,7 @@
     <!-- Hero Section -->
     <section id="accueil" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-b from-bosembo-blue to-blue-800 text-white">
         <div class="container mx-auto px-4 flex flex-col items-center">
-            <img src="favicon.jpg" alt="Logo Torche" class="logo-torche mr-2 h-10 w-auto">
+            <img src="favicon.jpg" alt="Logo Éditions Bosembo Kinshasa RDC" class="logo-torche mr-2 h-10 w-auto">
             <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-6">Éditions Bosembo</h1>
             <p class="text-xl md:text-2xl text-bosembo-gold font-semibold text-center mb-10">« Lire. Grandir. Inspirer. »</p>
             
@@ -284,7 +316,7 @@
             
             <div class="max-w-3xl mx-auto">
                 <p class="text-lg md:text-xl text-gray-700 leading-relaxed text-center">
-                    Éditions Bosembo, initiées en 2025 par Jack Kutiwu, publient des livres sur le leadership, le développement personnel et collectif, les relations humaines, l'entrepreneuriat et l'éveil. Les e-books sont gratuits en ligne et bientôt disponibles en version physique à titre onéreux.
+                    Éditions Bosembo, initiées en 2025 par Jack Kutiwu, est une maison d'édition basée à <strong>Kinshasa, RDC</strong>. Nous publions des livres sur le leadership, le développement personnel et collectif, les relations humaines, l'entrepreneuriat et l'éveil. Les e-books sont gratuits en ligne et bientôt disponibles en version physique à titre onéreux.
                 </p>
                 
                 <div class="mt-12 flex justify-center">
@@ -304,14 +336,14 @@
                 <!-- Book 1 -->
                 <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="h-100 bg-bosembo-blue flex items-center justify-center">
-                        <img src="vaf1.jpg" alt="Couverture du livre" class="w-full h-full object-cover">
+                        <img src="vaf1.jpg" alt="Couverture du livre La Vie Après La Fac - Éditions Bosembo Kinshasa RDC" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-bosembo-blue mb-3">LA VIE APRES LA FAC</h3>
-                        <p class="text-gray-600 mb-4">Maître Nathan Banze Mukuta est avocat au barreau près la Cour d’appel de Kinshasa/Matete, avocat de la République, arbitre, jeune écrivain, analyste politique et activiste congolais, né à Lubumbashi, dans le Grand Katanga. Il a effectué ses études supérieures en droit à l’Université Protestante au Congo, qui lui ont permis d’obtenir les différents titres précités.
+                        <p class="text-gray-600 mb-4">Maître Nathan Banze Mukuta est avocat au barreau près la Cour d'appel de Kinshasa/Matete, avocat de la République, arbitre, jeune écrivain, analyste politique et activiste congolais, né à Lubumbashi, dans le Grand Katanga. Il a effectué ses études supérieures en droit à l'Université Protestante au Congo, qui lui ont permis d'obtenir les différents titres précités.
 
-Dans La vie après la fac, il expose les réalités auxquelles il est confronté, tant dans sa propre vie que dans celle des autres, après leur parcours universitaire. Au-delà des rêves et des espoirs souvent promis aux jeunes générations, la réalité s’avère bien différente. Avec un esprit révolté et une rage constructive, l’auteur contribue, à travers cet ouvrage, à l’édifice du changement.</p>
-                        <button class="w-full bg-bosembo-gold hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition duration-300">
+Dans La vie après la fac, il expose les réalités auxquelles il est confronté, tant dans sa propre vie que dans celle des autres, après leur parcours universitaire. Au-delà des rêves et des espoirs souvent promis aux jeunes générations, la réalité s'avère bien différente. Avec un esprit révolté et une rage constructive, l'auteur contribue, à travers cet ouvrage, à l'édifice du changement.</p>
+                        <button class="download-btn w-full bg-bosembo-gold hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition duration-300" data-file="vaf1.pdf">
                             Télécharger
                         </button>
                     </div>
@@ -320,14 +352,14 @@ Dans La vie après la fac, il expose les réalités auxquelles il est confronté
                 <!-- Book 2 -->
                 <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="h-100 bg-bosembo-terracotta flex items-center justify-center">
-                        <img src="sol1.jpg" alt="Couverture du livre" class="w-full h-full object-cover">
+                        <img src="sol1.jpg" alt="Couverture du livre J'ai Trouvé La Solution - Éditions Bosembo Kinshasa RDC" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-bosembo-blue mb-3">J'AI TROUVÉ LA SOLUTION</h3>
-                        <p class="text-gray-600 mb-4">Jack Kutiwu Nzukukina, alias « Jack le Merveilleux », est un jeune auteur passionné par le leadership, les affaires et le Christ. Cofondateur de plusieurs structures autour de ces thématiques, il cultive également d’autres passions que le lecteur découvrira au fil du temps.
+                        <p class="text-gray-600 mb-4">Jack Kutiwu Nzukukina, alias « Jack le Merveilleux », est un jeune auteur passionné par le leadership, les affaires et le Christ. Cofondateur de plusieurs structures autour de ces thématiques, il cultive également d'autres passions que le lecteur découvrira au fil du temps.
 
-Dans J’ai trouvé la solution, il raconte comment il a longtemps cherché une approche capable de résoudre la majorité de ses problèmes et de faire prospérer ses entreprises. Il y dévoile finalement un principe universel, déjà mis en pratique par les plus grands. Découvrez cette solution qui éclaire et libère !</p>
-                        <button class="w-full bg-bosembo-gold hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition duration-300">
+Dans J'ai trouvé la solution, il raconte comment il a longtemps cherché une approche capable de résoudre la majorité de ses problèmes et de faire prospérer ses entreprises. Il y dévoile finalement un principe universel, déjà mis en pratique par les plus grands. Découvrez cette solution qui éclaire et libère !</p>
+                        <button class="download-btn w-full bg-bosembo-gold hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition duration-300" data-file="sol1.pdf">
                             Télécharger
                         </button>
                     </div>
@@ -336,14 +368,14 @@ Dans J’ai trouvé la solution, il raconte comment il a longtemps cherché une 
                 <!-- Book 3 -->
                 <div class="book-card bg-white rounded-lg overflow-hidden shadow-md">
                     <div class="h-100 bg-bosembo-gold flex items-center justify-center">
-                        <img src="passee1.jpg" alt="Couverture du livre" class="w-full h-full object-cover">
+                        <img src="passee1.jpg" alt="Couverture du livre Piégée Par Le Passé - Éditions Bosembo Kinshasa RDC" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-bosembo-blue mb-3">PIEGEE PAR LE PASSE</h3>
-                        <p class="text-gray-600 mb-4">Jason Ntumba Katambwa est un auteur fasciné par les émotions humaines et les dilemmes du cœur. Son écriture se distingue par une sensibilité rare et une capacité à capturer l’intensité des sentiments.
+                        <h3 class="text-xl font-bold text-bosembo-blue mb-3">PIÉGÉE PAR LE PASSÉ</h3>
+                        <p class="text-gray-600 mb-4">Jason Ntumba Katambwa est un auteur fasciné par les émotions humaines et les dilemmes du cœur. Son écriture se distingue par une sensibilité rare et une capacité à capturer l'intensité des sentiments.
 
-Dans Piégée par le passé, il nous entraîne dans un univers de choix difficiles et de regrets. Son engagement à inspirer son entourage se manifeste dans chacune de ses œuvres, toujours porteuses d’un message d’espoir et de résilience.</p>
-                        <button class="w-full bg-bosembo-gold hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition duration-300">
+Dans Piégée par le passé, il nous entraîne dans un univers de choix difficiles et de regrets. Son engagement à inspirer son entourage se manifeste dans chacune de ses œuvres, toujours porteuses d'un message d'espoir et de résilience.</p>
+                        <button class="download-btn w-full bg-bosembo-gold hover:bg-yellow-600 text-blue-900 font-bold py-2 px-4 rounded transition duration-300" data-file="passee1.pdf">
                             Télécharger
                         </button>
                     </div>
@@ -368,31 +400,31 @@ Dans Piégée par le passé, il nous entraîne dans un univers de choix difficil
     </section>
 
     <!-- Contact Section avec bouton WhatsApp -->
-<section id="contact" class="py-16 md:py-24 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-center text-bosembo-blue mb-12">
-      Contactez-nous
-    </h2>
+    <section id="contact" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-bosembo-blue mb-12">
+          Contactez-nous
+        </h2>
 
-    <div class="max-w-xl mx-auto">
-      <a 
-        href="https://wa.me/243829858780?text=Nom%20:%0AEmail%20:%0AVotre%20Message%20:%20Bonjour%20%C3%89ditions%20Bosembo,%20je%20souhaite..." 
-        target="_blank"
-        class="flex items-center justify-center space-x-3 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition duration-300"
-      >
-        <!-- Icône WhatsApp -->
-        <i class="fab fa-whatsapp text-3xl"></i>
-        <!-- Texte -->
-        <span class="text-lg md:text-xl">Contactez-nous sur WhatsApp</span>
-      </a>
-      <div class="flex justify-center">
-      <a href="https://www.instagram.com/editionsbosembo?igsh=c3c5aTZjNXl0NWF1" class="text-bosembo-blue hover:text-blue-800 text-2xl">
-                        <i class="fab fa-instagram"></i>
-                    </a>
+        <div class="max-w-xl mx-auto">
+          <a 
+            href="https://wa.me/243829858780?text=Nom%20:%0AEmail%20:%0AVotre%20Message%20:%20Bonjour%20%C3%89ditions%20Bosembo,%20je%20souhaite..." 
+            target="_blank"
+            class="flex items-center justify-center space-x-3 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition duration-300"
+          >
+            <!-- Icône WhatsApp -->
+            <i class="fab fa-whatsapp text-3xl"></i>
+            <!-- Texte -->
+            <span class="text-lg md:text-xl">Contactez-nous sur WhatsApp</span>
+          </a>
+          <div class="flex justify-center mt-4">
+            <a href="https://www.instagram.com/editionsbosembo?igsh=c3c5aTZjNXl0NWF1" class="text-bosembo-blue hover:text-blue-800 text-2xl">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
         </div>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12">
@@ -400,7 +432,7 @@ Dans Piégée par le passé, il nous entraîne dans un univers de choix difficil
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <div class="flex items-center justify-center md:justify-start">
-                        <img src="favicon.jpg" alt="Logo Torche" class="logo-torche mr-2 h-10 w-auto">
+                        <img src="favicon.jpg" alt="Logo Éditions Bosembo Kinshasa RDC" class="logo-torche mr-2 h-10 w-auto">
                         <span class="text-xl font-bold text-bosembo-gold">Éditions Bosembo</span>
                     </div>
                 </div>
@@ -417,11 +449,11 @@ Dans Piégée par le passé, il nous entraîne dans un univers de choix difficil
     </footer>
 
     <script>
-    
-
-  window.addEventListener("load", () => {
-    document.querySelector(".loading-page").style.display = "none";
-  });
+        // Gestion du chargement de la page
+        window.addEventListener("load", () => {
+            document.querySelector(".loading-page").style.display = "none";
+        });
+        
         // Menu mobile toggle
         document.getElementById('menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -453,6 +485,24 @@ Dans Piégée par le passé, il nous entraîne dans un univers de choix difficil
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+        
+        // Fonctionnalité de téléchargement des e-books
+        document.querySelectorAll('.download-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const fileName = this.getAttribute('data-file');
+                const fileUrl = fileName;
+                
+                // Créer un lien de téléchargement
+                const downloadLink = document.createElement('a');
+                downloadLink.href = fileUrl;
+                downloadLink.download = fileName;
+                
+                // Simuler un clic sur le lien pour déclencher le téléchargement
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+                document.body.removeChild(downloadLink);
             });
         });
     </script>
