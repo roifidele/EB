@@ -3,361 +3,329 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LCJ: Parlons Droit Éditions 3 | Éditions Bosembo</title>
+    <title>LCJ: Parlons Droit Éditions 3 - Éditions Bosembo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
-        
         :root {
             --bosembo-blue: #0057B7;
             --bosembo-gold: #F6BD1F;
             --bosembo-terracotta: #E76F51;
         }
         
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .title-font {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        /* Animation pour le dépliage de l'article */
         .article-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .article-content.expanded {
-            max-height: 2000px;
-            opacity: 1;
-            transition: max-height 1s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease 0.3s;
+            max-height: 5000px;
         }
         
-        /* Animation de l'icône */
-        .expand-icon {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        .expand-arrow {
+            transition: transform 0.4s ease;
         }
         
-        .expand-icon.expanded {
+        .expand-arrow.expanded {
             transform: rotate(180deg);
         }
         
-        /* Style pour la carte article */
-        .article-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border-radius: 16px;
-        }
-        
-        .article-card:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        /* Animation pour le bouton */
-        .cta-button {
-            transition: all 0.3s ease;
-            background: linear-gradient(135deg, var(--bosembo-blue), #004299);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 87, 183, 0.3);
-            background: linear-gradient(135deg, #004299, var(--bosembo-blue));
-        }
-        
-        /* Style pour l'image de l'article */
-        .article-image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px 12px 0 0;
-        }
-        
-        .article-image-container::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 40%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-        }
-        
-        /* Animation pour le titre */
-        .article-title {
-            position: relative;
+        .article-header {
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
-        .article-title:hover {
-            color: #003d8a;
+        .article-header:hover {
+            background-color: rgba(0, 87, 183, 0.05);
         }
         
-        .article-title::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: var(--bosembo-gold);
-            transition: width 0.3s ease;
+        /* Animation pour l'image */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .article-title:hover::after {
-            width: 100%;
+        .image-container {
+            animation: fadeInUp 0.8s ease-out;
         }
+        
+        /* Style pour les paragraphes de l'article */
+        .article-paragraph {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease;
+        }
+        
+        .article-content.expanded .article-paragraph {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Délais d'animation pour chaque paragraphe */
+        .article-content.expanded .article-paragraph:nth-child(1) { transition-delay: 0.1s; }
+        .article-content.expanded .article-paragraph:nth-child(2) { transition-delay: 0.2s; }
+        .article-content.expanded .article-paragraph:nth-child(3) { transition-delay: 0.3s; }
+        .article-content.expanded .article-paragraph:nth-child(4) { transition-delay: 0.4s; }
+        .article-content.expanded .article-paragraph:nth-child(5) { transition-delay: 0.5s; }
     </style>
 </head>
-<body class="bg-gradient-to-b from-gray-50 to-white min-h-screen">
+<body class="bg-gray-50 min-h-screen">
     <!-- Header -->
-    <header class="bg-bosembo-blue text-white py-4 px-6 shadow-lg sticky top-0 z-50">
+    <header class="bg-[#0057B7] text-white py-4 px-6 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
             <!-- Logo -->
-            <div class="flex items-center">
-                <div class="w-10 h-10 rounded-full bg-bosembo-gold flex items-center justify-center mr-3 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-bosembo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-full bg-[#F6BD1F] flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#0057B7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                 </div>
-                <a href="index.html" class="text-xl font-bold hover:text-bosembo-gold transition-colors duration-300">Éditions Bosembo</a>
+                <div>
+                    <h1 class="text-xl font-bold">Éditions Bosembo</h1>
+                    <p class="text-xs opacity-80">Le savoir à portée de tous</p>
+                </div>
             </div>
             
-            <!-- Navigation Desktop -->
-            <nav class="hidden md:block">
-                <ul class="flex space-x-8">
-                    <li><a href="index.html" class="hover:text-bosembo-gold transition-colors duration-300 font-medium">Accueil</a></li>
-                    <li><a href="index.html#about" class="hover:text-bosembo-gold transition-colors duration-300 font-medium">À propos</a></li>
-                    <li><a href="index.html#books" class="hover:text-bosembo-gold transition-colors duration-300 font-medium">Publications</a></li>
-                    <li><a href="index.html#community" class="hover:text-bosembo-gold transition-colors duration-300 font-medium">Communauté</a></li>
-                    <li><a href="index.html#contact" class="hover:text-bosembo-gold transition-colors duration-300 font-medium">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <!-- Menu mobile -->
-            <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <!-- Bouton retour -->
+            <a href="index.html" class="flex items-center space-x-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg>
-            </button>
-        </div>
-        
-        <!-- Menu mobile dropdown -->
-        <div id="mobileMenu" class="md:hidden hidden mt-4 pb-4 bg-bosembo-blue/95 rounded-lg shadow-xl">
-            <ul class="space-y-3 p-4">
-                <li><a href="index.html" class="block py-2 px-4 hover:text-bosembo-gold transition-colors duration-300 font-medium rounded-lg hover:bg-white/10">Accueil</a></li>
-                <li><a href="index.html#about" class="block py-2 px-4 hover:text-bosembo-gold transition-colors duration-300 font-medium rounded-lg hover:bg-white/10">À propos</a></li>
-                <li><a href="index.html#books" class="block py-2 px-4 hover:text-bosembo-gold transition-colors duration-300 font-medium rounded-lg hover:bg-white/10">Publications</a></li>
-                <li><a href="index.html#community" class="block py-2 px-4 hover:text-bosembo-gold transition-colors duration-300 font-medium rounded-lg hover:bg-white/10">Communauté</a></li>
-                <li><a href="index.html#contact" class="block py-2 px-4 hover:text-bosembo-gold transition-colors duration-300 font-medium rounded-lg hover:bg-white/10">Contact</a></li>
-            </ul>
+                <span>Retour</span>
+            </a>
         </div>
     </header>
 
-    <!-- Contenu principal de l'article -->
+    <!-- Contenu principal -->
     <main class="container mx-auto px-4 py-8 max-w-4xl">
-        <!-- Image de l'article -->
-<div class="article-image-container mb-8">
-    <div class="h-64 md:h-80 w-full bg-cover bg-center flex items-center justify-center relative"
-         style="background-image: url('LJC.jpg');">
-        <!-- Overlay pour améliorer la lisibilité du texte -->
-        <div class="absolute inset-0 bg-gradient-to-r from-bosembo-blue/70 to-bosembo-terracotta/70"></div>
-        
-        <!-- Contenu texte superposé -->
-        <div class="text-center text-white z-10 p-6 relative">
-            <div class="w-20 h-20 mx-auto mb-6 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                </svg>
-            </div>
-                    <h1 class="text-3xl md:text-4xl font-bold mb-2 title-font">Concours Parlons Droit</h1>
-                    <p class="text-lg opacity-90">Édition 3 • Université Protestante au Congo</p>
+        <!-- Image LJC.jpg en haut -->
+        <div class="image-container mb-8">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                <!-- Image LJC.jpg -->
+                <div class="relative">
+                    <!-- Placeholder avec message si l'image ne se charge pas -->
+                    <div id="imagePlaceholder" class="hidden h-64 md:h-96 bg-gradient-to-r from-[#0057B7] to-[#E76F51] flex flex-col items-center justify-center text-white p-8">
+                        <div class="text-center">
+                            <div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center mb-6 mx-auto">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                                </svg>
+                            </div>
+                            <p class="text-lg">Image LJC.jpg</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Image réelle -->
+                    <img 
+                        src="LJC.jpg" 
+                        alt="LCJ: Parlons Droit Édition 3 - Collège des Juristes" 
+                        class="w-full h-auto max-h-[500px] object-cover"
+                        onerror="document.getElementById('imagePlaceholder').classList.remove('hidden'); this.style.display='none';"
+                        onload="document.getElementById('imagePlaceholder').classList.add('hidden'); this.style.display='block';"
+                    >
                 </div>
                 
-                <!-- Badge Coming Soon -->
-                <div class="absolute top-4 right-4 bg-bosembo-gold text-bosembo-blue px-4 py-2 rounded-full font-bold shadow-lg">
-                    Coming Soon
+                <!-- Overlay avec informations sur l'image -->
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                    <div class="text-white">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-2">LCJ: Parlons Droit</h2>
+                        <p class="text-lg opacity-90">3ème Édition - Université Protestante au Congo</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-        
-        <!-- Métadonnées de l'article -->
-        <div class="flex flex-wrap items-center justify-between mb-8 text-gray-600">
-            <div class="flex items-center space-x-6">
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bosembo-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <span>Publié le 30 Janvier 2026</span>
-                </div>
-                <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bosembo-terracotta" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span>1 min de lecture</span>
+                
+                <!-- Badge d'édition -->
+                <div class="absolute top-4 right-4">
+                    <span class="bg-[#F6BD1F] text-[#0057B7] font-bold px-4 py-2 rounded-full shadow-lg">
+                        3ème Édition
+                    </span>
                 </div>
             </div>
             
-            <div class="mt-4 md:mt-0">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-bosembo-blue/10 text-bosembo-blue">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Actualité
-                </span>
+            <!-- Légende de l'image -->
+            <div class="text-center mt-4 text-gray-600 text-sm">
+                <p>Concours "Parlons Droit" - Collège des Juristes de l'ASBL Jeunesse Nouvelle Ère</p>
             </div>
         </div>
-        
-        <!-- Article principal avec fonction de dépliage -->
-        <div class="bg-white article-card overflow-hidden mb-12">
-            <!-- Titre cliquable pour déplier l'article -->
-            <div id="articleHeader" class="p-8 cursor-pointer border-b border-gray-100">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 id="articleTitle" class="article-title text-3xl md:text-4xl font-bold text-bosembo-blue title-font">
-                            LCJ: Parlons Droit Édition 3 (Coming Soon)
+
+        <!-- Article -->
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden mb-12">
+            <!-- En-tête de l'article (cliquable) -->
+            <div id="articleHeader" class="article-header p-8 border-b border-gray-200">
+                <div class="flex justify-between items-start">
+                    <div class="flex-1">
+                        <!-- Catégorie -->
+                        <div class="inline-flex items-center space-x-2 mb-4">
+                            <span class="bg-[#E76F51] text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Actualité
+                            </span>
+                            <span class="text-gray-500 text-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 inline mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2v12a2 2 0 002 2z" />
+                                </svg>
+                                Publié le 15 Nov. 2023
+                            </span>
+                        </div>
+                        
+                        <!-- Titre -->
+                        <h2 class="text-3xl md:text-4xl font-bold text-[#0057B7] mb-4 leading-tight">
+                            LCJ: Parlons Droit Éditions 3 (Coming Soon)
                         </h2>
-                        <p id="expandHint" class="text-gray-500 mt-4 flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bosembo-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        
+                        <!-- Indicateur de clic -->
+                        <div class="flex items-center text-[#0057B7] font-medium">
+                            <span id="toggleText" class="mr-2">Cliquez pour lire l'article</span>
+                            <svg id="expandArrow" class="expand-arrow h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
-                            Cliquez sur le titre pour lire l'article
-                        </p>
-                    </div>
-                    <div id="expandIcon" class="expand-icon text-bosembo-blue ml-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Contenu de l'article (caché par défaut) -->
+
+            <!-- Contenu de l'article (masqué par défaut) -->
             <div id="articleContent" class="article-content">
-                <div class="p-8 pt-6">
+                <div class="p-8">
                     <!-- Introduction -->
-                    <div class="mb-10">
-                        <p class="text-2xl text-bosembo-blue font-semibold italic leading-relaxed border-l-4 border-bosembo-gold pl-6 py-2">
+                    <div class="mb-8">
+                        <p class="text-xl text-[#0057B7] font-semibold italic mb-8 leading-relaxed">
                             Ça arrive, et ça commence bientôt.
                         </p>
                     </div>
-                    
+
                     <!-- Paragraphes de l'article -->
-                    <div class="space-y-8">
-                        <p class="text-gray-700 text-lg leading-relaxed">
+                    <div class="space-y-6">
+                        <p class="article-paragraph text-gray-700 text-lg leading-relaxed">
                             Initier dès le début les étudiants à l'argumentation et au débat scientifique : tel est l'objectif de la troisième édition du Concours Parlons Droit, organisé à l'Université Protestante au Congo (UPC).
                         </p>
-                        
-                        <div class="bg-gradient-to-r from-bosembo-blue/5 to-bosembo-terracotta/5 p-6 rounded-xl border border-bosembo-blue/20">
-                            <p class="text-gray-800 leading-relaxed">
-                                Ce concours vise à contribuer à la formation du nouvel étudiant en Droit, à améliorer sa culture juridique et à renforcer ses capacités intellectuelles dès les deux premières années du cursus. Il s'adresse principalement aux étudiants de L1 et L2 LMD de la Faculté de Droit, tout en restant un cadre de base d'apprentissage et d'expression juridique.
+
+                        <div class="article-paragraph bg-blue-50 border-l-4 border-[#0057B7] p-6 rounded-r-lg">
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Ce concours vise à contribuer à la formation du nouvel étudiant en Droit, à améliorer sa culture juridique et à renforcer ses capacités intellectuelles dès les deux premières années du cursus.
                             </p>
                         </div>
-                        
-                        <p class="text-gray-700 text-lg leading-relaxed">
+
+                        <p class="article-paragraph text-gray-700 text-lg leading-relaxed">
+                            Il s'adresse principalement aux étudiants de L1 et L2 LMD de la Faculté de Droit, tout en restant un cadre de base d'apprentissage et d'expression juridique.
+                        </p>
+
+                        <p class="article-paragraph text-gray-700 text-lg leading-relaxed">
                             Porté par le Collège des Juristes de l'ASBL Jeunesse Nouvelle Ère, dont la mission principale est la promotion des débats juridiques et sociaux, ce concours participe activement à l'émergence remarquable des têtes brillantes de la Faculté de Droit.
                         </p>
-                        
-                        <div class="flex items-start p-6 bg-bosembo-gold/10 rounded-xl border border-bosembo-gold/30">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-bosembo-blue mr-4 flex-shrink-0 mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
-                            <div>
-                                <p class="text-gray-800 font-medium mb-2">En collaboration avec la Faculté de Droit de l'UPC</p>
-                                <p class="text-gray-700">
-                                    le Collège des Juristes est prêt à offrir une nouvelle fois un événement riche en rebondissements, en sciences juridiques et en analyse critique des faits.
-                                </p>
+
+                        <div class="article-paragraph bg-[#F6BD1F] bg-opacity-10 border border-[#F6BD1F] border-opacity-30 p-6 rounded-lg">
+                            <p class="text-gray-700 text-lg leading-relaxed font-medium">
+                                En collaboration avec la Faculté de Droit de l'UPC, le Collège des Juristes est prêt à offrir une nouvelle fois un événement riche en rebondissements, en sciences juridiques et en analyse critique des faits.
+                            </p>
+                        </div>
+
+                        <p class="article-paragraph text-gray-700 text-lg leading-relaxed font-semibold">
+                            Restons à l'affût…
+                        </p>
+                    </div>
+
+                    <!-- Informations supplémentaires -->
+                    <div class="article-paragraph mt-12 pt-8 border-t border-gray-200">
+                        <h3 class="text-xl font-bold text-[#0057B7] mb-4">Informations pratiques</h3>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-[#0057B7] bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#0057B7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Organisateur</h4>
+                                    <p class="text-gray-600">Collège des Juristes - Jeunesse Nouvelle Ère</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-10 h-10 rounded-full bg-[#E76F51] bg-opacity-10 flex items-center justify-center flex-shrink-0">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#E76F51]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Lieu</h4>
+                                    <p class="text-gray-600">Université Protestante au Congo (UPC)</p>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="text-center py-6">
-                            <p class="text-2xl font-bold text-bosembo-blue title-font">
-                                Restons à l'affût…
-                            </p>
-                            <div class="w-24 h-1 bg-bosembo-gold mx-auto mt-4 rounded-full"></div>
-                        </div>
                     </div>
-                    
-                    <!-- Tags et catégories -->
-                    <div class="mt-12 pt-8 border-t border-gray-200">
-                        <h3 class="text-lg font-bold text-bosembo-blue mb-4">Mots-clés</h3>
-                        <div class="flex flex-wrap gap-3">
-                            <span class="px-4 py-2 bg-bosembo-blue text-white rounded-full font-medium shadow-sm">Concours</span>
-                            <span class="px-4 py-2 bg-bosembo-terracotta text-white rounded-full font-medium shadow-sm">Droit</span>
-                            <span class="px-4 py-2 bg-bosembo-gold text-bosembo-blue rounded-full font-medium shadow-sm">Étudiants</span>
-                            <span class="px-4 py-2 bg-gray-800 text-white rounded-full font-medium shadow-sm">UPC</span>
-                            <span class="px-4 py-2 bg-gray-600 text-white rounded-full font-medium shadow-sm">Éducation</span>
-                            <span class="px-4 py-2 bg-bosembo-blue/20 text-bosembo-blue rounded-full font-medium shadow-sm">Leadership</span>
+
+                    <!-- Tags -->
+                    <div class="article-paragraph mt-8 pt-6 border-t border-gray-200">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-4 py-2 bg-[#0057B7] text-white rounded-full text-sm font-medium">Concours</span>
+                            <span class="px-4 py-2 bg-[#E76F51] text-white rounded-full text-sm font-medium">Droit</span>
+                            <span class="px-4 py-2 bg-[#F6BD1F] text-[#0057B7] rounded-full text-sm font-medium">Étudiants</span>
+                            <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">Éducation</span>
+                            <span class="px-4 py-2 bg-gray-200 text-gray-700 rounded-full text-sm font-medium">UPC</span>
                         </div>
-                    </div>
-                    
-                    <!-- Bouton de retour -->
-                    <div class="mt-10 flex justify-center">
-                        <a href="index.html" class="cta-button text-white font-bold py-4 px-10 rounded-lg shadow-lg flex items-center group">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-3 group-hover:transform group-hover:-translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                            </svg>
-                            Retour à l'accueil
-                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Section de partage -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
-            <h3 class="text-lg font-bold text-bosembo-blue mb-4">Partager cet article</h3>
-            <div class="flex space-x-4">
-                <button class="flex-1 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                    </svg>
-                    Facebook
-                </button>
-                <button class="flex-1 py-3 bg-blue-400 text-white rounded-lg font-medium hover:bg-blue-500 transition-colors duration-300 flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                    </svg>
-                    Twitter
-                </button>
-                <button class="flex-1 py-3 bg-blue-700 text-white rounded-lg font-medium hover:bg-blue-800 transition-colors duration-300 flex items-center justify-center">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                    LinkedIn
-                </button>
+
+            <!-- Actions -->
+            <div class="p-8 border-t border-gray-200 bg-gray-50">
+                <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                    <div class="flex items-center space-x-4">
+                        <button onclick="shareArticle()" class="flex items-center space-x-2 text-gray-600 hover:text-[#0057B7] transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+                            </svg>
+                            <span>Partager</span>
+                        </button>
+                        
+                        <button onclick="printArticle()" class="flex items-center space-x-2 text-gray-600 hover:text-[#0057B7] transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                            </svg>
+                            <span>Imprimer</span>
+                        </button>
+                    </div>
+                    
+                    <a href="index.html" class="flex items-center space-x-2 text-[#0057B7] hover:text-blue-800 font-semibold">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                        </svg>
+                        <span>Retour à l'accueil</span>
+                    </a>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-bosembo-blue text-white py-10 px-6 mt-12">
+    <footer class="bg-[#0057B7] text-white py-8 px-4 mt-12">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-bosembo-gold flex items-center justify-center mr-3 shadow-md">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-bosembo-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#F6BD1F] flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#0057B7]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                             </svg>
                         </div>
-                        <span class="font-bold text-xl">Éditions Bosembo</span>
+                        <div>
+                            <h3 class="font-bold text-lg">Éditions Bosembo</h3>
+                            <p class="text-sm opacity-80">Lire. Grandir. Inspirer.</p>
+                        </div>
                     </div>
-                    <p class="mt-4 text-gray-300 max-w-md">
-                        Une maison d'édition dédiée au leadership, au développement personnel et à l'inspiration collective.
-                    </p>
+                    <p class="text-sm opacity-75">Maison d'édition affiliée à Bosembo Leadership Community</p>
                 </div>
                 
                 <div class="text-center md:text-right">
-                    <p class="text-sm text-gray-300 mb-2">© 2025 Éditions Bosembo. Tous droits réservés.</p>
-                    <div class="space-x-4">
-                        <a href="#" class="text-sm text-gray-300 hover:text-bosembo-gold transition-colors duration-300">Mentions légales</a>
-                        <a href="#" class="text-sm text-gray-300 hover:text-bosembo-gold transition-colors duration-300">Politique de confidentialité</a>
-                        <a href="index.html#contact" class="text-sm text-gray-300 hover:text-bosembo-gold transition-colors duration-300">Contact</a>
+                    <p class="text-sm mb-2">© 2025 Éditions Bosembo. Tous droits réservés.</p>
+                    <div class="flex justify-center md:justify-end space-x-4">
+                        <a href="#" class="text-sm opacity-75 hover:opacity-100 hover:text-[#F6BD1F] transition">Mentions légales</a>
+                        <a href="index.html#contact" class="text-sm opacity-75 hover:opacity-100 hover:text-[#F6BD1F] transition">Contact</a>
                     </div>
                 </div>
             </div>
@@ -365,103 +333,87 @@
     </footer>
 
     <script>
-        // Gestion du menu mobile
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('animate-fadeIn');
-        });
-        
-        // Gestion du dépliage de l'article
-        const articleHeader = document.getElementById('articleHeader');
-        const articleContent = document.getElementById('articleContent');
-        const expandIcon = document.getElementById('expandIcon');
-        const articleTitle = document.getElementById('articleTitle');
-        const expandHint = document.getElementById('expandHint');
-        
-        // Fonction pour déplier l'article
-        function expandArticle() {
-            const isExpanded = articleContent.classList.contains('expanded');
+        // Fonction pour basculer l'affichage de l'article
+        function toggleArticle() {
+            const articleContent = document.getElementById('articleContent');
+            const expandArrow = document.getElementById('expandArrow');
+            const toggleText = document.getElementById('toggleText');
             
-            if (!isExpanded) {
-                // Déplier l'article
-                articleContent.classList.add('expanded');
-                expandIcon.classList.add('expanded');
-                expandHint.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bosembo-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                    </svg>
-                    Cliquez sur le titre pour réduire l'article
-                `;
-                
-                // Ajouter une animation au titre
-                articleTitle.style.color = '#003d8a';
+            // Basculer les classes
+            articleContent.classList.toggle('expanded');
+            expandArrow.classList.toggle('expanded');
+            
+            // Changer le texte d'indication
+            if (articleContent.classList.contains('expanded')) {
+                toggleText.textContent = 'Cliquez pour masquer l\'article';
             } else {
-                // Replier l'article
-                articleContent.classList.remove('expanded');
-                expandIcon.classList.remove('expanded');
-                expandHint.innerHTML = `
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-bosembo-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                    Cliquez sur le titre pour lire l'article
-                `;
-                
-                // Réinitialiser la couleur du titre
-                articleTitle.style.color = '';
+                toggleText.textContent = 'Cliquez pour lire l\'article';
             }
         }
         
-        // Ajouter l'événement de clic au titre et à l'en-tête
-        articleHeader.addEventListener('click', expandArticle);
-        articleTitle.addEventListener('click', expandArticle);
+        // Ajouter l'événement de clic sur l'en-tête
+        document.getElementById('articleHeader').addEventListener('click', toggleArticle);
         
-        // Optionnel: Déplier automatiquement après un certain temps
+        // Fonction de partage
+        function shareArticle() {
+            const title = document.title;
+            const url = window.location.href;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    url: url
+                });
+            } else {
+                // Fallback pour les navigateurs qui ne supportent pas l'API Share
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Lien copié dans le presse-papier !');
+                });
+            }
+        }
+        
+        // Fonction d'impression
+        function printArticle() {
+            window.print();
+        }
+        
+        // Ajouter un effet visuel lors du clic sur l'en-tête
+        document.getElementById('articleHeader').addEventListener('mousedown', function() {
+            this.style.transform = 'scale(0.995)';
+        });
+        
+        document.getElementById('articleHeader').addEventListener('mouseup', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        document.getElementById('articleHeader').addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+        
+        // Gestion du chargement de l'image
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.querySelector('img[src="LJC.jpg"]');
+            if (img) {
+                // Vérifier si l'image existe
+                img.onerror = function() {
+                    console.log('Image LJC.jpg non trouvée, affichage du placeholder');
+                    document.getElementById('imagePlaceholder').classList.remove('hidden');
+                };
+                
+                img.onload = function() {
+                    console.log('Image LJC.jpg chargée avec succès');
+                    document.getElementById('imagePlaceholder').classList.add('hidden');
+                };
+            }
+        });
+        
+        // Ouvrir automatiquement l'article après un court délai pour l'expérience utilisateur
         setTimeout(() => {
-            // Petit effet visuel pour attirer l'attention
-            articleHeader.style.transform = 'scale(1.01)';
-            articleHeader.style.transition = 'transform 0.3s ease';
-            
-            setTimeout(() => {
-                articleHeader.style.transform = '';
-            }, 300);
+            const articleContent = document.getElementById('articleContent');
+            if (!articleContent.classList.contains('expanded')) {
+                toggleArticle();
+            }
         }, 1500);
-        
-        // Fonctionnalité de partage
-        const shareButtons = document.querySelectorAll('button');
-        shareButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const text = this.textContent.trim();
-                if (text === 'Facebook' || text === 'Twitter' || text === 'LinkedIn') {
-                    const shareUrl = encodeURIComponent(window.location.href);
-                    const shareTitle = encodeURIComponent(document.title);
-                    
-                    let shareWindow = '';
-                    
-                    if (text === 'Facebook') {
-                        shareWindow = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-                    } else if (text === 'Twitter') {
-                        shareWindow = `https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`;
-                    } else if (text === 'LinkedIn') {
-                        shareWindow = `https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}&title=${shareTitle}`;
-                    }
-                    
-                    window.open(shareWindow, 'Partager', 'width=600,height=400');
-                }
-            });
-        });
-        
-        // Effet de fade-in au chargement
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.5s ease';
-            
-            setTimeout(() => {
-                document.body.style.opacity = '1';
-            }, 100);
-        });
     </script>
 </body>
 </html>
