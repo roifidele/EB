@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Douceur-Ali Kalonda | Écrivain, Défenseur des Droits des Femmes, Pédagogue</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Police Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8B4513; /* Marron riche */
+            --secondary-color: #D4A76A; /* Or clair */
+            --accent-color: #C41E3A; /* Rouge pour l'accent */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .text-primary {
+            color: var(--primary-color);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary-color);
+        }
+        
+        .border-primary {
+            border-color: var(--primary-color);
+        }
+        
+        .hover-bg-primary:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .text-secondary {
+            color: var(--secondary-color);
+        }
+        
+        .bg-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .text-accent {
+            color: var(--accent-color);
+        }
+        
+        .bg-accent {
+            background-color: var(--accent-color);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.9) 0%, rgba(212, 167, 106, 0.85) 100%);
+        }
+        
+        .section-divider {
+            height: 4px;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            width: 100px;
+            margin: 0 auto;
+        }
+        
+        .book-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+                    <span class="text-white font-bold text-lg">DAK</span>
+                </div>
+                <span class="text-xl font-bold text-primary">Douceur-Ali Kalonda</span>
+            </a>
+            
+            <!-- Menu pour mobile -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Menu pour desktop -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#accueil" class="nav-link text-primary font-medium active-nav">Accueil</a>
+                <a href="#biographie" class="nav-link text-gray-700 font-medium">Biographie</a>
+                <a href="#oeuvres" class="nav-link text-gray-700 font-medium">Œuvres</a>
+                <a href="#engagement" class="nav-link text-gray-700 font-medium">Engagement</a>
+                <a href="#contact" class="nav-link text-gray-700 font-medium">Contact</a>
+            </div>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="flex flex-col space-y-3 px-4 py-6">
+                <a href="#accueil" class="nav-link text-primary font-medium active-nav">Accueil</a>
+                <a href="#biographie" class="nav-link text-gray-700 font-medium">Biographie</a>
+                <a href="#oeuvres" class="nav-link text-gray-700 font-medium">Œuvres</a>
+                <a href="#engagement" class="nav-link text-gray-700 font-medium">Engagement</a>
+                <a href="#contact" class="nav-link text-gray-700 font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section Hero / Accueil -->
+    <section id="accueil" class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Douceur-Ali Kalonda</h1>
+                    <div class="text-xl md:text-2xl mb-8">
+                        <span class="block">Écrivain, Défenseur des Droits des Femmes, Pédagogue</span>
+                    </div>
+                    <p class="text-lg mb-8 opacity-90 max-w-2xl">
+                        Auteure engagée dont les œuvres littéraires explorent les thèmes de l'émancipation féminine, 
+                        de l'éducation et de la justice sociale à travers des récits profonds et inspirants.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#oeuvres" class="bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300">
+                            Découvrir ses œuvres
+                        </a>
+                        <a href="#contact" class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition duration-300">
+                            Prendre contact
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-secondary rounded-full overflow-hidden shadow-2xl">
+                            <!-- Image de l'auteur (placeholder) -->
+                            <div class="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                                <i class="fas fa-user text-white text-8xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -bottom-4 -right-4 bg-accent text-white p-6 rounded-lg shadow-lg max-w-xs">
+                            <h3 class="font-bold text-lg mb-2">Prix littéraire 2022</h3>
+                            <p class="text-sm">Prix de la littérature engagée pour son roman "La Voix des Sans-Voix"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Biographie -->
+    <section id="biographie" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Biographie</h2>
+            <div class="section-divider mb-12"></div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-2/5 mb-10 md:mb-0">
+                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Parcours & Formation</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fas fa-graduation-cap text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Doctorat en Littérature Comparée, Université de Paris</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-book text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Plus de 15 ans d'expérience dans l'enseignement supérieur</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-award text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Lauréate de plusieurs prix littéraires internationaux</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-microphone text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Conférencière invitée dans des universités à travers le monde</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-3/5 md:pl-12">
+                    <div class="prose max-w-none">
+                        <p class="text-lg mb-6">
+                            Douceur-Ali Kalonda est une auteure et intellectuelle engagée dont le travail transcende les frontières entre la littérature, l'activisme social et la pédagogie. Née en République Démocratique du Congo, elle a développé très tôt une sensibilité particulière aux inégalités de genre et aux défis de l'éducation dans les sociétés contemporaines.
+                        </p>
+                        <p class="text-lg mb-6">
+                            À travers ses romans, essais et articles académiques, elle explore les complexités de la condition féminine, les défis de l'émancipation et les intersections entre culture, tradition et modernité. Son approche pédagogique innovante lui a permis de former toute une génération de penseurs et d'activistes.
+                        </p>
+                        <p class="text-lg">
+                            En tant que défenseure des droits des femmes, elle a fondé l'organisation "Femmes Éclairées" qui œuvre pour l'éducation des jeunes filles et l'autonomisation des femmes en Afrique subsaharienne. Son engagement lui a valu plusieurs reconnaissances internationales.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <div class="bg-primary text-white py-3 px-6 rounded-lg">
+                            <span class="font-bold block text-2xl">12+</span>
+                            <span class="text-sm">Ouvrages publiés</span>
+                        </div>
+                        <div class="bg-secondary text-gray-800 py-3 px-6 rounded-lg">
+                            <span class="font-bold block text-2xl">50+</span>
+                            <span class="text-sm">Conférences internationales</span>
+                        </div>
+                        <div class="bg-accent text-white py-3 px-6 rounded-lg">
+                            <span class="font-bold block text-2xl">3</span>
+                            <span class="text-sm">Prix littéraires</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Œuvres -->
+    <section id="oeuvres" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Œuvres Littéraires</h2>
+            <div class="section-divider mb-12"></div>
+            <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-16">
+                Découvrez une sélection des œuvres majeures de Douceur-Ali Kalonda, qui allient profondeur littéraire et engagement social.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Livre 1 -->
+                <div class="book-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary p-6 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h4 class="text-2xl font-bold mb-2">La Voix des Sans-Voix</h4>
+                            <p class="italic">Roman, 2021</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Un roman poignant qui suit le parcours de trois générations de femmes dans une société en mutation. Une exploration des silences imposés et des voix qui émergent malgré tout.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">Fiction sociale</span>
+                            <a href="#" class="text-secondary font-medium hover:text-primary transition duration-300">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Livre 2 -->
+                <div class="book-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-accent to-pink-500 p-6 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h4 class="text-2xl font-bold mb-2">Éduquer pour Émanciper</h4>
+                            <p class="italic">Essai, 2019</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Un essai fondateur sur les pédagogies alternatives et leur rôle dans l'émancipation des femmes. Une analyse approfondie des systèmes éducatifs à travers le prisme du genre.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">Essai pédagogique</span>
+                            <a href="#" class="text-secondary font-medium hover:text-primary transition duration-300">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Livre 3 -->
+                <div class="book-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-yellow-400 p-6 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <h4 class="text-2xl font-bold mb-2">Les Héritières du Savoir</h4>
+                            <p class="italic">Roman, 2023</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            Dernier roman de l'auteure, explorant la transmission intergénérationnelle du savoir féminin dans un monde en pleine transformation numérique et culturelle.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">Roman contemporain</span>
+                            <a href="#" class="text-secondary font-medium hover:text-primary transition duration-300">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition duration-300">
+                    Voir toutes les œuvres <i class="fas fa-book-open ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Engagement -->
+    <section id="engagement" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Engagement pour les Droits des Femmes</h2>
+            <div class="section-divider mb-12"></div>
+            
+            <div class="flex flex-col md:flex-row items-center mb-16">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Femmes Éclairées</h3>
+                        <p class="text-lg mb-6">
+                            Fondée par Douceur-Ali Kalonda en 2015, l'organisation "Femmes Éclairées" a pour mission de promouvoir l'éducation des filles et l'autonomisation économique des femmes en Afrique subsaharienne.
+                        </p>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                                <span>Plus de 5 000 bourses d'études attribuées à des jeunes filles</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                                <span>Programmes de formation professionnelle dans 12 pays</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-accent mr-3 mt-1"></i>
+                                <span>Plates-formes de mentorat connectant des femmes leaders</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-accent font-bold hover:text-primary transition duration-300">
+                            Visiter le site de l'organisation <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Femmes éduquées" class="rounded-xl shadow-lg w-full h-64 object-cover">
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Pédagogie Féministe</h3>
+                    <p>Développement de méthodes pédagogiques inclusives qui questionnent les stéréotypes de genre et promeuvent l'égalité dans l'éducation.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-microphone-alt text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Plaidoyer International</h3>
+                    <p>Interventions régulières auprès des instances internationales (ONU Femmes, UNESCO) pour promouvoir les droits des femmes et l'éducation inclusive.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-pen-fancy text-gray-800 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-4">Écriture Engagée</h3>
+                    <p>Utilisation de la littérature comme outil de conscientisation et de transformation sociale, en particulier sur les questions de genre et d'égalité.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Contact & Collaborations</h2>
+            <div class="section-divider mb-12"></div>
+            
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Pourquoi entrer en contact ?</h3>
+                        <p class="text-lg mb-6">
+                            Douceur-Ali Kalonda est disponible pour des conférences, des ateliers d'écriture, des collaborations académiques et des interventions médiatiques sur les sujets suivants :
+                        </p>
+                        
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start">
+                                <i class="fas fa-chalkboard-teacher text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Conférences sur la littérature engagée et l'écriture féministe</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Ateliers de formation sur la pédagogie inclusive</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-handshake text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Collaborations avec des organisations œuvrant pour les droits des femmes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-newspaper text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Interviews et contributions médiatiques</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="border-t pt-6">
+                            <h4 class="text-xl font-bold text-primary mb-4">Contact direct</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center">
+                                    <i class="fas fa-envelope text-accent mr-3"></i>
+                                    <span>contact@douceur-alikalonda.com</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-phone text-accent mr-3"></i>
+                                    <span>+33 1 23 45 67 89</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-accent mr-3"></i>
+                                    <span>Paris, France</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <div class="bg-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Envoyer un message</h3>
+                        
+                        <form id="contact-form" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nom complet</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Adresse e-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                            </div>
+                            
+                            <div>
+                                <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
+                                <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Sélectionner un sujet</option>
+                                    <option value="conference">Demande de conférence</option>
+                                    <option value="interview">Demande d'interview</option>
+                                    <option value="collaboration">Proposition de collaboration</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">
+                                Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                        
+                        <div id="form-message" class="mt-4 hidden p-4 rounded-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                            <span class="text-primary font-bold text-lg">DAK</span>
+                        </div>
+                        <span class="text-xl font-bold">Douceur-Ali Kalonda</span>
+                    </div>
+                    <p class="text-gray-300 max-w-md">
+                        Écrivaine, Défenseure des Droits des Femmes et Pédagogue engagée pour un monde plus juste et égalitaire.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2023 Douceur-Ali Kalonda. Tous droits réservés.</p>
+                <p class="mt-2 text-sm">Site web conçu avec passion pour partager l'œuvre et l'engagement d'une auteure exceptionnelle.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Fermer le menu mobile lorsqu'on clique sur un lien
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+        
+        // Gestion de la soumission du formulaire de contact
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Ici, normalement, on enverrait les données à un serveur
+            // Pour cette démo, on simule un envoi réussi
+            const formMessage = document.getElementById('form-message');
+            formMessage.textContent = `Merci ${name} pour votre message ! Nous vous répondrons dans les plus brefs délais.`;
+            formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
+            formMessage.classList.remove('hidden');
+            
+            // Réinitialiser le formulaire
+            document.getElementById('contact-form').reset();
+            
+            // Faire disparaître le message après 5 secondes
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Mise en évidence du lien de navigation actif au scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+        
+        // Animation douce pour les ancres
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+                
+             
