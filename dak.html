@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Douceur-Ali Kalonda | Écrivain, Défenseur des Droits des Femmes, Pédagogue</title>
+    <title>Douceur-Ali Kalonda Nyembo | Écrivain, Défenseur des Droits des Femmes</title>
     <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome pour les icônes -->
@@ -101,6 +101,14 @@
         .active-nav::after {
             width: 100%;
         }
+        
+        .flag-dr-congo {
+            width: 24px;
+            height: 16px;
+            background: linear-gradient(135deg, #007FFF 50%, #F7D618 50%);
+            display: inline-block;
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -124,7 +132,7 @@
                 <a href="#accueil" class="nav-link text-primary font-medium active-nav">Accueil</a>
                 <a href="#biographie" class="nav-link text-gray-700 font-medium">Biographie</a>
                 <a href="#oeuvres" class="nav-link text-gray-700 font-medium">Œuvres</a>
-                <a href="#engagement" class="nav-link text-gray-700 font-medium">Engagement</a>
+                <a href="#engagement" class="nav-link text-gray-700 font-medium">ASBL MUTETEZI</a>
                 <a href="#contact" class="nav-link text-gray-700 font-medium">Contact</a>
             </div>
         </div>
@@ -135,7 +143,7 @@
                 <a href="#accueil" class="nav-link text-primary font-medium active-nav">Accueil</a>
                 <a href="#biographie" class="nav-link text-gray-700 font-medium">Biographie</a>
                 <a href="#oeuvres" class="nav-link text-gray-700 font-medium">Œuvres</a>
-                <a href="#engagement" class="nav-link text-gray-700 font-medium">Engagement</a>
+                <a href="#engagement" class="nav-link text-gray-700 font-medium">ASBL MUTETEZI</a>
                 <a href="#contact" class="nav-link text-gray-700 font-medium">Contact</a>
             </div>
         </div>
@@ -146,34 +154,40 @@
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Douceur-Ali Kalonda</h1>
-                    <div class="text-xl md:text-2xl mb-8">
-                        <span class="block">Écrivain, Défenseur des Droits des Femmes, Pédagogue</span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Douceur-Ali Kalonda Nyembo</h1>
+                    <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
+                        <span class="bg-accent px-3 py-1 rounded-full text-sm font-semibold">Écrivain</span>
+                        <span class="bg-secondary text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">Défenseur des droits des femmes</span>
+                        <span class="bg-primary px-3 py-1 rounded-full text-sm font-semibold">Fondateur ASBL MUTETEZI</span>
                     </div>
-                    <p class="text-lg mb-8 opacity-90 max-w-2xl">
-                        Auteure engagée dont les œuvres littéraires explorent les thèmes de l'émancipation féminine, 
-                        de l'éducation et de la justice sociale à travers des récits profonds et inspirants.
+                    <p class="text-xl md:text-2xl mb-6">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Kinshasa, RDC
                     </p>
-                    <div class="flex space-x-4">
+                    <p class="text-lg mb-8 opacity-90 max-w-2xl">
+                        Économiste de formation, écrivain engagé et défenseur des droits des femmes, 
+                        je consacre ma vie à l'émancipation féminine à travers la littérature et l'action sociale.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
                         <a href="#oeuvres" class="bg-white text-primary font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition duration-300">
-                            Découvrir ses œuvres
+                            Découvrir "Femme de distinction"
                         </a>
                         <a href="#contact" class="bg-transparent border-2 border-white text-white font-bold py-3 px-6 rounded-lg hover:bg-white hover:text-primary transition duration-300">
-                            Prendre contact
+                            Me contacter
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center">
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 bg-secondary rounded-full overflow-hidden shadow-2xl">
-                            <!-- Image de l'auteur (placeholder) -->
+                            <!-- Portrait de l'auteur (placeholder avec initiales) -->
                             <div class="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                                <i class="fas fa-user text-white text-8xl"></i>
+                                <i class="fas fa-user-circle text-white text-8xl"></i>
                             </div>
                         </div>
                         <div class="absolute -bottom-4 -right-4 bg-accent text-white p-6 rounded-lg shadow-lg max-w-xs">
-                            <h3 class="font-bold text-lg mb-2">Prix littéraire 2022</h3>
-                            <p class="text-sm">Prix de la littérature engagée pour son roman "La Voix des Sans-Voix"</p>
+                            <h3 class="font-bold text-lg mb-2">Premier livre</h3>
+                            <p class="text-sm italic">"Femme de distinction"</p>
+                            <p class="text-xs mt-2">Élever la conscience, Transformer le monde</p>
                         </div>
                     </div>
                 </div>
@@ -187,26 +201,58 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Biographie</h2>
             <div class="section-divider mb-12"></div>
             
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-user text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Identité</h3>
+                    <p class="text-gray-700"><span class="font-semibold">Nom:</span> Kalonda</p>
+                    <p class="text-gray-700"><span class="font-semibold">Post-nom:</span> Nyembo</p>
+                    <p class="text-gray-700"><span class="font-semibold">Prénom:</span> Douceur-Ali</p>
+                    <p class="text-gray-700"><span class="font-semibold">Nationalité:</span> Congolaise <span class="flag-dr-congo ml-2"></span></p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-gray-800"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Naissance</h3>
+                    <p class="text-gray-700"><span class="font-semibold">Date:</span> 25 juin 1990</p>
+                    <p class="text-gray-700"><span class="font-semibold">Lieu:</span> Lubumbashi, RDC</p>
+                    <p class="text-gray-700"><span class="font-semibold">Âge:</span> 33 ans</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
+                    <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-graduation-cap text-white"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-2">Formation</h3>
+                    <p class="text-gray-700"><span class="font-semibold">Diplôme:</span> Licencié en Économie et Développement</p>
+                    <p class="text-gray-700"><span class="font-semibold">Résidence:</span> Kinshasa, RDC</p>
+                </div>
+            </div>
+            
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-2/5 mb-10 md:mb-0">
-                    <div class="bg-gray-100 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-primary mb-6">Parcours & Formation</h3>
+                    <div class="bg-primary text-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Parcours & Engagement</h3>
                         <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="fas fa-graduation-cap text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Doctorat en Littérature Comparée, Université de Paris</span>
+                                <i class="fas fa-check-circle text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Licencié en Économie et Développement</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-book text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Plus de 15 ans d'expérience dans l'enseignement supérieur</span>
+                                <i class="fas fa-check-circle text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Écrivain engagé pour les droits des femmes</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-award text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Lauréate de plusieurs prix littéraires internationaux</span>
+                                <i class="fas fa-check-circle text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Fondateur de l'ASBL MUTETEZI</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-microphone text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Conférencière invitée dans des universités à travers le monde</span>
+                                <i class="fas fa-check-circle text-secondary text-xl mr-3 mt-1"></i>
+                                <span>Auteur de "Femme de distinction"</span>
                             </li>
                         </ul>
                     </div>
@@ -215,29 +261,20 @@
                 <div class="md:w-3/5 md:pl-12">
                     <div class="prose max-w-none">
                         <p class="text-lg mb-6">
-                            Douceur-Ali Kalonda est une auteure et intellectuelle engagée dont le travail transcende les frontières entre la littérature, l'activisme social et la pédagogie. Née en République Démocratique du Congo, elle a développé très tôt une sensibilité particulière aux inégalités de genre et aux défis de l'éducation dans les sociétés contemporaines.
+                            Né à Lubumbashi le 25 juin 1990, Douceur-Ali Kalonda Nyembo est un économiste de formation, 
+                            titulaire d'une licence en Économie et Développement. Résidant à Kinshasa, il a choisi de mettre 
+                            ses compétences au service d'une cause qui lui tient particulièrement à cœur : la défense des droits des femmes.
                         </p>
                         <p class="text-lg mb-6">
-                            À travers ses romans, essais et articles académiques, elle explore les complexités de la condition féminine, les défis de l'émancipation et les intersections entre culture, tradition et modernité. Son approche pédagogique innovante lui a permis de former toute une génération de penseurs et d'activistes.
+                            Passionné par l'écriture et profondément convaincu que la littérature peut être un puissant vecteur 
+                            de changement social, il publie son premier ouvrage "Femme de distinction" dont le slogan 
+                            "Élever la conscience, Transformer le monde" résume parfaitement sa philosophie et son engagement.
                         </p>
                         <p class="text-lg">
-                            En tant que défenseure des droits des femmes, elle a fondé l'organisation "Femmes Éclairées" qui œuvre pour l'éducation des jeunes filles et l'autonomisation des femmes en Afrique subsaharienne. Son engagement lui a valu plusieurs reconnaissances internationales.
+                            En tant que fondateur de l'ASBL MUTETEZI, il œuvre quotidiennement pour l'autonomisation 
+                            des femmes congolaises, convaincu que leur émancipation est la clé du développement de la 
+                            République Démocratique du Congo.
                         </p>
-                    </div>
-                    
-                    <div class="mt-10 flex flex-wrap gap-4">
-                        <div class="bg-primary text-white py-3 px-6 rounded-lg">
-                            <span class="font-bold block text-2xl">12+</span>
-                            <span class="text-sm">Ouvrages publiés</span>
-                        </div>
-                        <div class="bg-secondary text-gray-800 py-3 px-6 rounded-lg">
-                            <span class="font-bold block text-2xl">50+</span>
-                            <span class="text-sm">Conférences internationales</span>
-                        </div>
-                        <div class="bg-accent text-white py-3 px-6 rounded-lg">
-                            <span class="font-bold block text-2xl">3</span>
-                            <span class="text-sm">Prix littéraires</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -247,140 +284,151 @@
     <!-- Section Œuvres -->
     <section id="oeuvres" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Œuvres Littéraires</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Œuvre Littéraire</h2>
             <div class="section-divider mb-12"></div>
-            <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-16">
-                Découvrez une sélection des œuvres majeures de Douceur-Ali Kalonda, qui allient profondeur littéraire et engagement social.
-            </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Livre 1 -->
-                <div class="book-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-primary to-secondary p-6 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <h4 class="text-2xl font-bold mb-2">La Voix des Sans-Voix</h4>
-                            <p class="italic">Roman, 2021</p>
+            <div class="max-w-4xl mx-auto">
+                <!-- Livre principal -->
+                <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+                    <div class="md:flex">
+                        <div class="md:w-2/5 bg-gradient-to-r from-primary to-secondary p-12 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <i class="fas fa-book-open text-6xl mb-4"></i>
+                                <h3 class="text-3xl font-bold mb-2">Femme de distinction</h3>
+                                <p class="text-xl italic mb-4">Premier livre</p>
+                                <div class="border-t border-white border-opacity-30 pt-4">
+                                    <p class="text-lg font-semibold">Slogan :</p>
+                                    <p class="text-2xl font-bold">"Élever la conscience, Transformer le monde"</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">
-                            Un roman poignant qui suit le parcours de trois générations de femmes dans une société en mutation. Une exploration des silences imposés et des voix qui émergent malgré tout.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <span class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">Fiction sociale</span>
-                            <a href="#" class="text-secondary font-medium hover:text-primary transition duration-300">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Livre 2 -->
-                <div class="book-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-accent to-pink-500 p-6 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <h4 class="text-2xl font-bold mb-2">Éduquer pour Émanciper</h4>
-                            <p class="italic">Essai, 2019</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">
-                            Un essai fondateur sur les pédagogies alternatives et leur rôle dans l'émancipation des femmes. Une analyse approfondie des systèmes éducatifs à travers le prisme du genre.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <span class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">Essai pédagogique</span>
-                            <a href="#" class="text-secondary font-medium hover:text-primary transition duration-300">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Livre 3 -->
-                <div class="book-card bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div class="h-48 bg-gradient-to-r from-secondary to-yellow-400 p-6 flex items-center justify-center">
-                        <div class="text-center text-white">
-                            <h4 class="text-2xl font-bold mb-2">Les Héritières du Savoir</h4>
-                            <p class="italic">Roman, 2023</p>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <p class="text-gray-600 mb-4">
-                            Dernier roman de l'auteure, explorant la transmission intergénérationnelle du savoir féminin dans un monde en pleine transformation numérique et culturelle.
-                        </p>
-                        <div class="flex justify-between items-center">
-                            <span class="bg-primary text-white text-sm font-medium py-1 px-3 rounded-full">Roman contemporain</span>
-                            <a href="#" class="text-secondary font-medium hover:text-primary transition duration-300">En savoir plus <i class="fas fa-arrow-right ml-1"></i></a>
+                        <div class="md:w-3/5 p-8">
+                            <h4 class="text-2xl font-bold text-primary mb-4">À propos de l'ouvrage</h4>
+                            <p class="text-gray-700 mb-4">
+                                "Femme de distinction" est bien plus qu'un simple livre, c'est un manifeste, 
+                                un appel à l'éveil des consciences et un guide pour l'émancipation féminine.
+                            </p>
+                            <p class="text-gray-700 mb-6">
+                                À travers cet ouvrage, Douceur-Ali Kalonda Nyembo explore les défis auxquels 
+                                les femmes sont confrontées dans la société congolaise et propose des pistes 
+                                de réflexion et d'action pour leur autonomisation.
+                            </p>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg mb-6">
+                                <h5 class="font-bold text-primary mb-2">Thématiques abordées :</h5>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm">Émancipation féminine</span>
+                                    <span class="bg-secondary text-gray-800 px-3 py-1 rounded-full text-sm">Leadership</span>
+                                    <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Éducation</span>
+                                    <span class="bg-gray-700 text-white px-3 py-1 rounded-full text-sm">Autonomisation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-primary text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">
+                                    <i class="fas fa-shopping-cart mr-2"></i> Commander
+                                </a>
+                                <a href="#" class="bg-gray-200 text-gray-700 font-bold py-3 px-6 rounded-lg hover:bg-gray-300 transition duration-300">
+                                    <i class="fas fa-file-pdf mr-2"></i> Extrait
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center bg-primary text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition duration-300">
-                    Voir toutes les œuvres <i class="fas fa-book-open ml-2"></i>
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Section Engagement -->
+    <!-- Section Engagement - ASBL MUTETEZI -->
     <section id="engagement" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Engagement pour les Droits des Femmes</h2>
-            <div class="section-divider mb-12"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">ASBL MUTETEZI</h2>
+            <div class="section-divider mb-4"></div>
+            <p class="text-center text-xl text-gray-600 mb-12">Fondée par Douceur-Ali Kalonda Nyembo</p>
             
             <div class="flex flex-col md:flex-row items-center mb-16">
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
-                        <h3 class="text-2xl font-bold text-primary mb-6">Femmes Éclairées</h3>
+                        <h3 class="text-2xl font-bold text-primary mb-6">Notre Mission</h3>
                         <p class="text-lg mb-6">
-                            Fondée par Douceur-Ali Kalonda en 2015, l'organisation "Femmes Éclairées" a pour mission de promouvoir l'éducation des filles et l'autonomisation économique des femmes en Afrique subsaharienne.
+                            MUTETEZI (qui signifie "défenseur" en langue locale) est une organisation à but non lucratif 
+                            dédiée à la défense des droits des femmes et à leur autonomisation en République Démocratique du Congo.
                         </p>
-                        <ul class="space-y-3 mb-6">
+                        
+                        <h4 class="text-xl font-bold text-primary mb-4">Nos actions :</h4>
+                        <ul class="space-y-4">
                             <li class="flex items-start">
-                                <i class="fas fa-check text-accent mr-3 mt-1"></i>
-                                <span>Plus de 5 000 bourses d'études attribuées à des jeunes filles</span>
+                                <i class="fas fa-heart text-accent mr-3 mt-1"></i>
+                                <span><strong>Soutien psychologique</strong> aux femmes victimes de violences</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-accent mr-3 mt-1"></i>
-                                <span>Programmes de formation professionnelle dans 12 pays</span>
+                                <i class="fas fa-graduation-cap text-accent mr-3 mt-1"></i>
+                                <span><strong>Programmes d'alphabétisation</strong> et de formation professionnelle</span>
                             </li>
                             <li class="flex items-start">
-                                <i class="fas fa-check text-accent mr-3 mt-1"></i>
-                                <span>Plates-formes de mentorat connectant des femmes leaders</span>
+                                <i class="fas fa-balance-scale text-accent mr-3 mt-1"></i>
+                                <span><strong>Assistance juridique</strong> pour la défense des droits des femmes</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-hand-holding-heart text-accent mr-3 mt-1"></i>
+                                <span><strong>Micro-crédits</strong> pour l'autonomisation économique</span>
                             </li>
                         </ul>
-                        <a href="#" class="inline-flex items-center text-accent font-bold hover:text-primary transition duration-300">
-                            Visiter le site de l'organisation <i class="fas fa-external-link-alt ml-2"></i>
-                        </a>
+                        
+                        <div class="mt-8">
+                            <a href="#" class="inline-flex items-center bg-accent text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition duration-300">
+                                Soutenir l'ASBL <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <div class="md:w-1/2 md:pl-12">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Femmes éduquées" class="rounded-xl shadow-lg w-full h-64 object-cover">
+                    <div class="bg-primary text-white p-8 rounded-xl shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6">Mot du fondateur</h3>
+                        <i class="fas fa-quote-left text-secondary text-3xl mb-4"></i>
+                        <p class="text-lg mb-6 leading-relaxed">
+                            "J'ai fondé MUTETEZI parce que je crois profondément que l'émancipation des femmes 
+                            est la clé du développement de notre pays. Chaque femme que nous aidons à se relever, 
+                            à s'éduquer, à s'autonomiser, c'est toute une communauté qui avance. 
+                            La femme congolaise mérite d'être célébrée, protégée et soutenue."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
+                                <i class="fas fa-user text-primary"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="font-bold">Douceur-Ali Kalonda Nyembo</p>
+                                <p class="text-sm text-secondary">Fondateur, ASBL MUTETEZI</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-female text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Pédagogie Féministe</h3>
-                    <p>Développement de méthodes pédagogiques inclusives qui questionnent les stéréotypes de genre et promeuvent l'égalité dans l'éducation.</p>
+                    <h4 class="font-bold text-xl mb-2">500+</h4>
+                    <p class="text-gray-600">Femmes accompagnées</p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-microphone-alt text-white text-2xl"></i>
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-gavel text-gray-800 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Plaidoyer International</h3>
-                    <p>Interventions régulières auprès des instances internationales (ONU Femmes, UNESCO) pour promouvoir les droits des femmes et l'éducation inclusive.</p>
+                    <h4 class="font-bold text-xl mb-2">200+</h4>
+                    <p class="text-gray-600">Cas juridiques traités</p>
                 </div>
                 
-                <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-                    <div class="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-pen-fancy text-gray-800 text-2xl"></i>
+                <div class="bg-gray-50 p-6 rounded-lg text-center">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-school text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-4">Écriture Engagée</h3>
-                    <p>Utilisation de la littérature comme outil de conscientisation et de transformation sociale, en particulier sur les questions de genre et d'égalité.</p>
+                    <h4 class="font-bold text-xl mb-2">15</h4>
+                    <p class="text-gray-600">Centres de formation</p>
                 </div>
             </div>
         </div>
@@ -389,51 +437,64 @@
     <!-- Section Contact -->
     <section id="contact" class="py-20 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Contact & Collaborations</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">Contact</h2>
             <div class="section-divider mb-12"></div>
             
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-12 md:mb-0">
                     <div class="bg-white p-8 rounded-xl shadow-lg h-full">
-                        <h3 class="text-2xl font-bold text-primary mb-6">Pourquoi entrer en contact ?</h3>
-                        <p class="text-lg mb-6">
-                            Douceur-Ali Kalonda est disponible pour des conférences, des ateliers d'écriture, des collaborations académiques et des interventions médiatiques sur les sujets suivants :
-                        </p>
+                        <h3 class="text-2xl font-bold text-primary mb-6">Informations de contact</h3>
                         
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start">
-                                <i class="fas fa-chalkboard-teacher text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Conférences sur la littérature engagée et l'écriture féministe</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-users text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Ateliers de formation sur la pédagogie inclusive</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-handshake text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Collaborations avec des organisations œuvrant pour les droits des femmes</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-newspaper text-secondary text-xl mr-3 mt-1"></i>
-                                <span>Interviews et contributions médiatiques</span>
-                            </li>
-                        </ul>
+                        <div class="space-y-6 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone-alt text-white"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-500">Téléphone</p>
+                                    <p class="text-xl font-semibold">0851252117</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-gray-800"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-500">Email</p>
+                                    <p class="text-xl font-semibold">contact@dakalonda.cd</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <p class="text-sm text-gray-500">Adresse</p>
+                                    <p class="text-xl font-semibold">Kinshasa, RDC</p>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="border-t pt-6">
-                            <h4 class="text-xl font-bold text-primary mb-4">Contact direct</h4>
-                            <div class="space-y-3">
-                                <div class="flex items-center">
-                                    <i class="fas fa-envelope text-accent mr-3"></i>
-                                    <span>contact@douceur-alikalonda.com</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-phone text-accent mr-3"></i>
-                                    <span>+33 1 23 45 67 89</span>
-                                </div>
-                                <div class="flex items-center">
-                                    <i class="fas fa-map-marker-alt text-accent mr-3"></i>
-                                    <span>Paris, France</span>
-                                </div>
+                            <h4 class="text-xl font-bold text-primary mb-4">ASBL MUTETEZI</h4>
+                            <p class="text-gray-700 mb-4">
+                                Pour toute question concernant l'association ou pour proposer une collaboration :
+                            </p>
+                            <div class="flex items-center space-x-4">
+                                <a href="#" class="text-primary hover:text-accent transition duration-300">
+                                    <i class="fab fa-facebook-f text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-accent transition duration-300">
+                                    <i class="fab fa-twitter text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-accent transition duration-300">
+                                    <i class="fab fa-instagram text-2xl"></i>
+                                </a>
+                                <a href="#" class="text-primary hover:text-accent transition duration-300">
+                                    <i class="fab fa-linkedin-in text-2xl"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -455,12 +516,18 @@
                             </div>
                             
                             <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Téléphone (optionnel)</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            
+                            <div>
                                 <label for="subject" class="block text-gray-700 font-medium mb-2">Sujet</label>
                                 <select id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
                                     <option value="">Sélectionner un sujet</option>
-                                    <option value="conference">Demande de conférence</option>
+                                    <option value="livre">Commander "Femme de distinction"</option>
+                                    <option value="conference">Invitation à une conférence</option>
+                                    <option value="asbl">Collaboration avec MUTETEZI</option>
                                     <option value="interview">Demande d'interview</option>
-                                    <option value="collaboration">Proposition de collaboration</option>
                                     <option value="autre">Autre</option>
                                 </select>
                             </div>
@@ -486,37 +553,43 @@
     <footer class="bg-primary text-white py-12">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-8 md:mb-0">
-                    <div class="flex items-center space-x-2 mb-4">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start space-x-2 mb-4">
                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                             <span class="text-primary font-bold text-lg">DAK</span>
                         </div>
-                        <span class="text-xl font-bold">Douceur-Ali Kalonda</span>
+                        <span class="text-xl font-bold">Douceur-Ali Kalonda Nyembo</span>
                     </div>
                     <p class="text-gray-300 max-w-md">
-                        Écrivaine, Défenseure des Droits des Femmes et Pédagogue engagée pour un monde plus juste et égalitaire.
+                        Écrivain, Défenseur des Droits des Femmes et Fondateur de l'ASBL MUTETEZI
+                    </p>
+                    <p class="text-gray-300 mt-2">
+                        <i class="fas fa-phone mr-2"></i> 0851252117
                     </p>
                 </div>
                 
-                <div class="flex space-x-6">
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition duration-300">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+                <div class="text-center md:text-right">
+                    <p class="mb-2">Résidant à Kinshasa, République Démocratique du Congo</p>
+                    <div class="flex justify-center md:justify-end space-x-4 mt-4">
+                        <a href="#" class="hover:text-secondary transition duration-300">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition duration-300">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition duration-300">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="hover:text-secondary transition duration-300">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-                <p>&copy; 2023 Douceur-Ali Kalonda. Tous droits réservés.</p>
-                <p class="mt-2 text-sm">Site web conçu avec passion pour partager l'œuvre et l'engagement d'une auteure exceptionnelle.</p>
+                <p>&copy; 2023 Douceur-Ali Kalonda Nyembo. Tous droits réservés.</p>
+                <p class="mt-2 text-sm">"Femme de distinction - Élever la conscience, Transformer le monde"</p>
             </div>
         </div>
     </footer>
@@ -542,13 +615,13 @@
             
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
             
-            // Ici, normalement, on enverrait les données à un serveur
-            // Pour cette démo, on simule un envoi réussi
+            // Simulation d'envoi réussi
             const formMessage = document.getElementById('form-message');
-            formMessage.textContent = `Merci ${name} pour votre message ! Nous vous répondrons dans les plus brefs délais.`;
+            formMessage.textContent = `Merci ${name} pour votre message ! Je vous répondrai dans les plus brefs délais.`;
             formMessage.className = 'mt-4 p-4 rounded-lg bg-green-100 text-green-800';
             formMessage.classList.remove('hidden');
             
@@ -604,5 +677,3 @@
     </script>
 </body>
 </html>
-                
-             
