@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Éditions Bosembo · Concours Write to Lead</title>
+  <!-- Tailwind via CDN + style de base -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Angular (1.8) via CDN pour une intégration légère avec contrôleur simple -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    /* Ombre portée fine pour recréer le relief de l'affiche */
+    .poster-shadow {
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.25), 0 8px 15px rgba(0,0,0,0.1);
+    }
+    /* Simule le bord irrégulier / pliure charme */
+    .poster-edge {
+      position: relative;
+    }
+    .poster-edge::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 70% 20%, rgba(255,215,0,0.03) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    /* petite police manuscrite pour "ROI FIDÈLE" */
+    .font-serif-display {
+      font-family: 'Times New Roman', serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    /* souligné style vintage */
+    .underline-wavy {
+      text-decoration: underline wavy #b45309 2px;
+      text-underline-offset: 6px;
+    }
+  </style>
+</head>
+<body class="bg-amber-50 flex items-center justify-center min-h-screen p-4 font-sans">
+
+  <!-- Définition de l'application Angular -->
+  <div ng-app="concoursApp" ng-controller="InscriptionController" class="w-full max-w-4xl">
+
+    <!-- CARTE PRINCIPALE : REPRODUCTION DE L'AFFICHE -->
+    <div class="poster-edge poster-shadow bg-white border-8 border-double border-amber-800 rounded-sm overflow-hidden relative">
+
+      <!-- bande supérieure foncée (comme l'en-tête) -->
+      <div class="bg-gradient-to-r from-amber-900 via-amber-800 to-amber-900 px-6 py-3 text-center">
+        <h1 class="text-3xl md:text-4xl font-serif-display text-amber-100 tracking-widest">
+          Éditions Bosembo
+        </h1>
+        <p class="text-amber-300 text-xl italic -mt-1">ROI FIDÈLE</p>
+      </div>
+
+      <!-- contenu principal de l'affiche -->
+      <div class="p-6 md:p-8 space-y-6 bg-[#fdfaf5]">
+
+        <!-- titre du concours + calligraphie -->
+        <div class="text-center border-b-2 border-dashed border-amber-300 pb-3">
+          <span class="bg-amber-200 text-amber-900 px-4 py-1 text-sm uppercase tracking-widest font-bold">concours d'écriture</span>
+          <h2 class="text-5xl md:text-6xl font-black text-amber-900 leading-tight mt-2" style="text-shadow: 2px 2px 0 #e3c9a0;">
+            WRITE TO LEAD
+          </h2>
+        </div>
+
+        <!-- conditions de participation en gros -->
+        <div class="grid md:grid-cols-2 gap-4 items-center">
+          <div class="bg-amber-100/80 p-5 border-l-4 border-amber-700 space-y-3 text-amber-900">
+            <p class="text-lg font-bold flex items-center gap-2"><span class="text-2xl">📝</span> TOUTE PERSONNE ÂGÉE DE PLUS DE 15 ANS PEUT PARTICIPER</p>
+            <p class="text-base flex items-start gap-2"><span class="text-xl">📍</span> HABITANT À KINSHASA</p>
+            <p class="text-base flex items-center gap-2"><span class="text-xl">💰</span> Prix de participation : <span class="font-mono text-2xl font-bold text-amber-800">7500 €</span> <span class="text-sm line-through decoration-2 decoration-red-400 ml-1">(faux? l'affiche dit 7500€ mais…)</span></p>
+            <p class="text-xs text-amber-700">*frais d'inscription incluant le dossier de lecture</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg border-2 border-amber-600 text-center space-y-2">
+            <span class="bg-red-700 text-white px-3 py-1 text-xs font-bold">CLÔTURE</span>
+            <p class="text-3xl font-black text-amber-900">29 mars</p>
+            <p class="text-lg uppercase tracking-wide">des candidatures</p>
+            <div class="w-16 h-0.5 bg-amber-400 mx-auto"></div>
+            <p class="text-amber-800 font-bold mt-2">🏆 PRIX DES GAGNANTS :</p>
+            <p class="text-xl leading-tight"><span class="font-black text-3xl text-amber-800">1000$</span> en accompagnement</p>
+            <p class="text-md">et publication d'un <span class="bg-amber-200 px-2 italic font-bold">PREMIER LIVRE</span></p>
+          </div>
+        </div>
+
+        <!-- rappel tout âge + ose participer -->
+        <div class="bg-amber-700/10 py-4 px-2 flex flex-wrap items-center justify-between gap-2 text-center md:text-left">
+          <div class="flex-1">
+            <p class="text-sm md:text-base font-semibold text-amber-800">📢 TOUT PERSONNE ÂGE DE PLUS DE 15 ANS PEUT PARTICIPER</p>
+          </div>
+          <div class="flex-1 text-md md:text-xl font-serif italic text-amber-900">
+            « Le prochain auteur publié pourrait être toi. »
+          </div>
+          <div class="flex-1">
+            <span class="bg-amber-800 text-amber-100 text-2xl px-5 py-2 inline-block transform -rotate-1 font-bold">Ôse participer !</span>
+          </div>
+        </div>
+
+        <!-- petite mention édit -->
+        <p class="text-right text-xs text-amber-600">* Éditions Bosembo – Roi Fidèle *</p>
+      </div>
+
+      <!-- SECTION INSCRIPTION (avec Angular) -->
+      <div class="bg-amber-900/5 border-t-4 border-amber-800 p-6 md:p-8">
+        <h3 class="text-2xl font-bold text-amber-900 mb-4 flex items-center gap-2"><span class="text-3xl">✍️</span> Formulaire d'inscription au concours</h3>
+
+        <!-- formulaire Angular avec validation simple -->
+        <form name="inscriptionForm" ng-submit="submitForm()" novalidate class="grid md:grid-cols-2 gap-4">
+          
+          <!-- champ nom -->
+          <div class="space-y-1">
+            <label class="text-amber-800 font-semibold text-sm">Nom complet *</label>
+            <input type="text" ng-model="user.nom" required 
+                   class="w-full p-2 border-2 border-amber-300 focus:border-amber-600 rounded bg-white/80"
+                   placeholder="Ex : Mubiala Marie">
+            <div ng-show="inscriptionForm.$submitted && !user.nom" class="text-red-600 text-xs">⛔ requis</div>
+          </div>
+          
+          <!-- âge / date de naissance (pour vérifier >15 ans) -->
+          <div class="space-y-1">
+            <label class="text-amber-800 font-semibold text-sm">Date de naissance *</label>
+            <input type="date" ng-model="user.birthdate" required 
+                   class="w-full p-2 border-2 border-amber-300 focus:border-amber-600 rounded bg-white/80">
+            <div ng-show="inscriptionForm.$submitted && !user.birthdate" class="text-red-600 text-xs">⛔ requis</div>
+            <div ng-show="user.birthdate && !isAgeValid()" class="text-red-600 text-xs">⛔ Vous devez avoir plus de 15 ans.</div>
+          </div>
+          
+          <!-- commune / résidence Kinshasa -->
+          <div class="space-y-1">
+            <label class="text-amber-800 font-semibold text-sm">Commune à Kinshasa *</label>
+            <input type="text" ng-model="user.commune" required 
+                   class="w-full p-2 border-2 border-amber-300 focus:border-amber-600 rounded bg-white/80"
+                   placeholder="ex: Gombe, Lemba...">
+            <div ng-show="inscriptionForm.$submitted && !user.commune" class="text-red-600 text-xs">⛔ requis</div>
+          </div>
+          
+          <!-- email -->
+          <div class="space-y-1">
+            <label class="text-amber-800 font-semibold text-sm">Email *</label>
+            <input type="email" ng-model="user.email" required 
+                   class="w-full p-2 border-2 border-amber-300 focus:border-amber-600 rounded bg-white/80"
+                   placeholder="exemple@email.com">
+            <div ng-show="inscriptionForm.$submitted && inscriptionForm.email.$error.required" class="text-red-600 text-xs">⛔ requis</div>
+            <div ng-show="inscriptionForm.$submitted && inscriptionForm.email.$error.email" class="text-red-600 text-xs">⛔ email invalide</div>
+          </div>
+          
+          <!-- téléphone (optionnel mais recommandé) -->
+          <div class="space-y-1">
+            <label class="text-amber-800 font-semibold text-sm">Téléphone (WhatsApp si possible)</label>
+            <input type="tel" ng-model="user.phone" 
+                   class="w-full p-2 border-2 border-amber-300 rounded bg-white/80"
+                   placeholder="+243 ...">
+          </div>
+          
+          <!-- statut participation (prix) mais affiche juste -->
+          <div class="space-y-1 flex items-end">
+            <p class="text-sm bg-amber-100 p-2 rounded w-full"><span class="font-bold">Frais : 7500 €</span> (à payer sur place après présélection)</p>
+          </div>
+          
+          <!-- checkbox confirmation résidence Kinshasa + âge -->
+          <div class="md:col-span-2 flex items-start gap-2 mt-2">
+            <input type="checkbox" ng-model="user.confirmConditions" required 
+                   class="mt-1 w-5 h-5 accent-amber-700">
+            <label class="text-sm text-amber-800">Je certifie habiter à Kinshasa, être âgé(e) de plus de 15 ans, et avoir pris connaissance des modalités du concours.</label>
+          </div>
+          <div ng-show="inscriptionForm.$submitted && !user.confirmConditions" class="md:col-span-2 text-red-600 text-xs -mt-2">⛔ Vous devez accepter les conditions.</div>
+          
+          <!-- message de retour -->
+          <div ng-show="message" class="md:col-span-2 p-3 rounded bg-amber-100 text-amber-800 border border-amber-400" ng-bind="message"></div>
+          
+          <!-- boutons -->
+          <div class="md:col-span-2 flex flex-wrap gap-4 pt-2">
+            <button type="submit" 
+                    class="bg-amber-800 hover:bg-amber-900 text-white font-bold py-3 px-8 rounded shadow-md transition flex items-center gap-2 text-lg">
+              ✍️ Soumettre ma candidature
+            </button>
+            <button type="button" ng-click="resetForm()" 
+                    class="border-2 border-amber-700 text-amber-800 hover:bg-amber-100 py-3 px-6 rounded font-semibold">
+              Effacer
+            </button>
+          </div>
+        </form>
+
+        <!-- petite légende finale -->
+        <p class="text-xs text-amber-600 mt-4 text-center">* Les places sont limitées. Après validation, vous recevrez un email avec les instructions pour le paiement des 7500 € (frais de lecture). Les gagnants bénéficient d'un accompagnement éditorial et de la publication.</p>
+      </div>
+    </div>
+
+    <!-- crédit bas de page style affiche -->
+    <p class="text-center text-sm text-amber-700 mt-4 italic">Éditions Bosembo – « Write to lead » – Kinshasa, RDC</p>
+  </div>
+
+  <!-- Script Angular -->
+  <script>
+    angular.module('concoursApp', [])
+      .controller('InscriptionController', function($scope) {
+        // modèle utilisateur
+        $scope.user = {
+          nom: '',
+          birthdate: '',
+          commune: '',
+          email: '',
+          phone: '',
+          confirmConditions: false
+        };
+
+        // fonction de validation d'âge (>15 ans)
+        $scope.isAgeValid = function() {
+          if (!$scope.user.birthdate) return true; // pas encore choisi => pas d'erreur
+          var today = new Date();
+          var birth = new Date($scope.user.birthdate);
+          var age = today.getFullYear() - birth.getFullYear();
+          var m = today.getMonth() - birth.getMonth();
+          if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+            age--;
+          }
+          return age > 15; // strictement plus de 15 ans ( >15 )
+        };
+
+        // message d'info
+        $scope.message = '';
+
+        // soumission
+        $scope.submitForm = function() {
+          // réinitialiser message
+          $scope.message = '';
+
+          // Vérification manuelle de l'âge en plus des required
+          if ($scope.user.birthdate && !$scope.isAgeValid()) {
+            $scope.message = '❌ Désolé, vous devez avoir plus de 15 ans pour participer.';
+            return;
+          }
+
+          // si formulaire valide (required et email)
+          if ($scope.inscriptionForm.$valid && $scope.user.confirmConditions && $scope.isAgeValid()) {
+            // Ici on pourrait envoyer vers un service, on simule un enregistrement.
+            $scope.message = '✅ Félicitations ! Votre pré-inscription est enregistrée. Vous recevrez sous 48h un email de confirmation avec les instructions pour le règlement des frais (7500 €) et la marche à suivre.';
+            // optionnel: remise à zéro (on laisse pour l'exemple, mais commenté)
+            // $scope.resetForm();
+          } else {
+            $scope.message = '⚠️ Veuillez remplir correctement tous les champs requis et accepter les conditions.';
+          }
+        };
+
+        // réinitialiser formulaire
+        $scope.resetForm = function() {
+          $scope.user = {
+            nom: '',
+            birthdate: '',
+            commune: '',
+            email: '',
+            phone: '',
+            confirmConditions: false
+          };
+          $scope.inscriptionForm.$setPristine();
+          $scope.inscriptionForm.$setUntouched();
+          $scope.message = '';
+        };
+      });
+  </script>
+</body>
+</html>
