@@ -256,6 +256,31 @@
         </div>
       </div>
     </div>
+
+    <div class="relative w-full overflow-hidden bg-yellow-400 py-3 shadow-md marquee-container">
+  <div class="animate-marquee whitespace-nowrap">
+    <span class="mx-8 text-xl font-bold text-white">⚠️ Fermeture temporaire, réouverture bientôt ⚠️</span>
+    <span class="mx-8 text-xl font-bold text-white">⚠️ Fermeture temporaire, réouverture bientôt ⚠️</span>
+    <span class="mx-8 text-xl font-bold text-white">⚠️ Fermeture temporaire, réouverture bientôt ⚠️</span>
+  </div>
+</div>
+
+<style>
+  @keyframes marqueeScroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  .animate-marquee {
+    animation: marqueeScroll 20s linear infinite;
+    display: inline-flex;
+    width: fit-content;
+  }
+  
+  .marquee-container:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+</style>
     
     <!-- Navigation -->
     <nav class="fixed w-full bg-white shadow-md z-50">
@@ -440,7 +465,7 @@ Dans "Le Sage et l'intrépide" il démontre comment deux caractères cultivés e
 
         <div class="max-w-xl mx-auto">
           <a 
-            href="https://wa.me/243829858780?text=Nom%20:%0AEmail%20:%0AVotre%20Message%20:%20Bonjour%20%C3%89ditions%20Bosembo,%20je%20souhaite..." 
+            href="https://wa.me/243?text=Nom%20:%0AEmail%20:%0AVotre%20Message%20:%20Bonjour%20%C3%89ditions%20Bosembo,%20je%20souhaite..." 
             target="_blank"
             class="flex items-center justify-center space-x-3 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg shadow-lg transition duration-300"
           >
